@@ -20,4 +20,5 @@ module.exports = {
       template: 'src/index1.html',
     }),
   ],
+  
 };
