@@ -4,8 +4,9 @@
   "description": "this is an excersice to make the  basic webpack setup, can also serve as a boilerplate for future projects.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "start": "webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
