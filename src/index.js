@@ -14,8 +14,8 @@ const clearElement = (element) => {
 };
 
 const render = async (gameIndex) => {
-  const data = await APIdata.GetScores(gameIndex);
   clearElement(Scores);
+  const data = await APIdata.GetScores(gameIndex);
   data.result.forEach((element) => {
     const li = document.createElement('li');
     const span1 = document.createElement('span');
