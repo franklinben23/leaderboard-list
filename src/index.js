@@ -47,9 +47,11 @@ Form.addEventListener('submit', (e) => {
   e.preventDefault();
   if (Form.name.value === '' || Form.score.value === null) return;
   APIdata.addScore(gameIndex, Form.name.value, Form.score.value);
+  clearElement(Scores);
   render(gameIndex);
 });
 
 refreshBtn.addEventListener('click', () => {
   render(gameIndex);
+  clearElement(Scores);
 });
