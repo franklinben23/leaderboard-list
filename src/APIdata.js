@@ -1,4 +1,4 @@
-const ApiUrl = 'https://cors-anywhere.herokuapp.com/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const ApiUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
 const MakeGame = () => {
   fetch(
