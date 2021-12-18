@@ -4,8 +4,10 @@
   "description": "this is an excersice to make the  basic webpack setup, can also serve as a boilerplate for future projects.",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "serve": "webpack serve",
+    "start": "webpack --config webpack.config.js --watch"
   },
   "repository": {
     "type": "git",
@@ -23,9 +25,11 @@
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "webpack": "^5.64.4",
-    "webpack-cli": "^4.9.1"
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "style-loader": "^3.3.1"
   }
 }
