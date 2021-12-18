@@ -1,38 +1,40 @@
-const ApiUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const ApiUrl = 'https://cors-anywhere.herokuapp.com/https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
 const MakeGame = () => {
-  fetch('${ApiUrl}games/', {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify({
-    name: "franklin's new game"
-  }),
-  }) 
-  .then((response) => response.json())
-  .then((data) => {
-    localStorage.setItem('Game Index', data.result.split(' ')[3]);
-  });
+  fetch(
+    `${ApiUrl}games/`, {
+      method: 'POST',
+      body: JSON.stringify({
+        name: "franklin's new game",
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    },
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      localStorage.setItem('Game Index', data.result.split(' ')[3]);
+    });
 };
 
 const addScore = (gameIndex, name, score) => {
   fetch(
-    `${apiUrl}/games/${gameIndex}/scores`,
+    `${ApiUrl}/games/${gameIndex}/scores`,
     {
       method: 'POST',
       body: JSON.stringify({
         user: name,
-        score: score,
+        score,
       }),
       headers: {
-        'Content-type': 'application/json',
+        'Content-type': 'application/json; charset=UTF-8',
       },
     },
   )
     .then((response) => response.json());
 };
 
-const GetScores = (gameIndex) => fetch(`${apiUrl}/games/${gameIndex}/scores`).then(response => response.json());
+const GetScores = (gameIndex) => fetch(`${ApiUrl}/games/${gameIndex}/scores`).then((response) => response.json());
 
-export {GetScores, MakeGame, addScore};
+export default { MakeGame, addScore, GetScores };
